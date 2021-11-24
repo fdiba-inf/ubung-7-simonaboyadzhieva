@@ -12,19 +12,25 @@ public class NumberCounter {
         int[] numbers = new int[numberCount];
 
         System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
+        for (int index = 0; index < numbers.length; index++){
             numbers[index] = input.nextInt();
         }
 
         System.out.print("Search for number: ");
         int number = input.nextInt();
 
-        int numberOccurrences = 0; // Call method
+        int numberOccurrences = countNumberOccurrences(number, numbers); 
         System.out.println("Number occurrences: " + numberOccurrences);
     }
 
     public static int countNumberOccurrences(int number, int[] numbers) {
-        // Implement method
-        return 0;
+      int occurrences = 0;
+        for (int index = 0; index < numbers.length; index++){
+          if (number == numbers[index]){
+            occurrences++;
+          }
+        }
+
+        return occurrences;
     }
 }
